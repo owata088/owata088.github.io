@@ -15,9 +15,11 @@
             //↓エッジでバグるかもしれない
             if (userAgent.indexOf('safari') != -1) {
                 console.log('Safari以外')
+                alert('safari以外')
                 target.href = "manifest.json"
             }else{
                 console.log('Safari');
+                alert('safari')
                 target.href = "manifest.webmanifest";
             }
         </script>
