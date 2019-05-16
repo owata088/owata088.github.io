@@ -5,7 +5,7 @@
 */
 
 //↓キャッシュバージョン
-var CACHE_NAME = webcame_v001;
+var CACHE_NAME = "webcame_v001";
 
 //↓キャッシュ保持するファイル
 var dateCache_v1 = [
