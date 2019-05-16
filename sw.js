@@ -5,7 +5,7 @@
 */
 
 //↓キャッシュバージョン
-var CACHE_NAME = "webcame_v001";
+var CACHE_NAME = "webcame_v002";
 
 //↓キャッシュ保持するファイル
 var dateCache_v1 = [
@@ -24,7 +24,7 @@ self.addEventListener('install', function (event) {
         caches.open(CACHE_NAME)
             .then(function (cache) {
                 //↓キャッシュ保持したいファイルのパス
-                return cache.addAll(camera.js);
+                return cache.addAll(dateCache_v1);
 
             })
 
