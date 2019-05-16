@@ -3,8 +3,19 @@
 データ名、verを規定
 
 */
-//var CACHE_NAME = index.html;
-//↑キャッシュの名前
+
+//↓キャッシュバージョン
+var CACHE_NAME = webcame_v001;
+
+//↓キャッシュ保持するファイル
+var dateCache_v1 = [
+    "index.html",
+    "sw.js",
+    "camera.js",
+    "style.css",
+    "manifest.json"
+]
+
 
 self.addEventListener('install', function (event) {
     event.waitUntil(
@@ -13,7 +24,7 @@ self.addEventListener('install', function (event) {
         caches.open(CACHE_NAME)
             .then(function (cache) {
                 //↓キャッシュ保持したいファイルのパス
-                return cache.addAll(pct / sio.jpg);
+                return cache.addAll(camera.js);
 
             })
 

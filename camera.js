@@ -87,6 +87,7 @@ function takepicture() {
     }
 }
 //下記はカメラデータの送信部分
+/*
 function send() {
     data = canvas.toDataURL('image/png').replace(/^.*,/, '')
     $.ajax('/read.php', {
@@ -96,5 +97,5 @@ function send() {
         $('#readStr').val(res)
     })
 }
-
+*/
 startup()

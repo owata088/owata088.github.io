@@ -5,7 +5,7 @@
     "name": "サンプルのPWAサイト",
   
   
-    "start_url": "スタート時に表示するURLの指定通常はweb/",
+    "start_url": "https://owata088.github.io/",
   
   
     "display": "standalone"
