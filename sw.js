@@ -5,7 +5,7 @@
 */
 
 //↓キャッシュバージョン
-var CACHE_NAME = "webcame_v002";
+var CACHE_NAME = "webcame_v003";
 
 //↓キャッシュ保持するファイル
 var dateCache_v1 = [
@@ -13,7 +13,8 @@ var dateCache_v1 = [
     "sw.js",
     "camera.js",
     "style.css",
-    "manifest.json"
+    "manifest.json",
+    "camera03.js"
 ]
 
 
