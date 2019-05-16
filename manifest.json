@@ -1,0 +1,12 @@
+{
+    "short_name": "PWAサイト",
+  
+  
+    "name": "サンプルのPWAサイト",
+  
+  
+    "start_url": "スタート時に表示するURLの指定通常はweb/",
+  
+  
+    "display": "standalone"
+  }

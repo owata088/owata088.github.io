@@ -1,1 +1,67 @@
-hello world
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>htmlでカメラゾ</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header>
+        <div class="header-contents">
+            
+        </div><!-- /.header-contents -->
+    </header>
+    <div class="main-wrapper">
+        <!--下記カメラ周りのhtml文（HTML内で直接カメラを操作-->
+        <div class="camera">
+            <video id="video" autoplay playsinline="true">video stream not available</video>
+        </div><br>
+        <select name="dlist"></select>
+        <button id="startbutton">カメラ逝くゾ</button><button id="cameraRestart">カメラをリスタートするゾ</button><br>
+        <canvas id="canvas">
+            <textarea id="readStr"></textarea>
+        </canvas>
+    </div><!-- /.main-wrapper -->
+    <footer></footer>
+        <!--画像を表示-->
+
+        
+
+
+        <!--標準カメラアプリ依存系-->
+        <!--
+        <input type="file" id="myImage" accept="image/*">
+        <img id="preview">
+        -->
+        <!--カメラ以上-->
+        
+
+        <!--下記PWAの設定判定周り-->
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js').then(function () {
+                    console.log('サービスワーカ登録成功ゾ');
+                    alert('サービスワーカ登録成功ゾ');
+                }).catch(function (err) {
+                    console.log('サービスワーカ追加できてないじゃん', err);
+                    alert('サービスワーカ追加できてないじゃん');
+                })
+            } else {
+                console.log('サービスワーカ対応してないじゃん');
+                alert('サービスワーカ対応してないじゃん');
+            }
+        </script>
+        <!--PWA以上-->
+
+        <script src="camera.js"> </script><!--カメラのJSジャンプ-->
+        <script src="sw.js"></script>
+        <!--<script language="JavaScript" type="text/javascript" src="camera03.js"> </script>-->
+        <!--カメラアプリ依存系取得画像表示-->
+</body>
+
+</html>
