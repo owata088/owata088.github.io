@@ -31,6 +31,24 @@ self.addEventListener('install', function (event) {
 
     );
 });
+
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+      caches.keys().then(keys => {
+        return Promise.all(
+          keys.filter(key => {
+            return !CACHE_NAME.includes(key);
+          }).map(key => {
+            // 不要なキャッシュを削除
+            return caches.delete(key);
+          })
+        );
+      })
+    );
+  });
+
+/*
 //activeteイベントの中でcaches.keys()を使って古いキャッシュだけを削除する
 self.addEventListener('activate', function (event) {
     event.waitUntil(
@@ -49,3 +67,4 @@ self.addEventListener('fetch', function (event) {
         })
     )
 })
+*/
