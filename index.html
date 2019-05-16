@@ -7,22 +7,46 @@
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--↓アイホンでURLバー非表示するやつ-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link id="BrowserSwich" href="manifest.webmanifest" rel="manifest"/>
+    <link id="BrowserSwich" href="manifest.webmanifest" rel="manifest" />
     <script>
-            //↓Safari判定用ゾ
-            var userAgent = window.navigator.userAgent.toLowerCase();
-            var target = document.getElementById("BrowserSwich")
-            //↓エッジでバグるかもしれない
-            if (userAgent.indexOf('safari') != -1) {
-                console.log('Safari以外')
-                alert('safari以外')
-                target.href = "manifest.json"
-            }else{
-                console.log('Safari');
-                alert('safari')
-                target.href = "manifest.webmanifest";
-            }
-        </script>
+        //↓Safari判定用ゾ
+        var userAgent = window.navigator.userAgent.toLowerCase();
+        var target = document.getElementById("BrowserSwich")
+        //↓エッジでバグるかもしれない
+        if (userAgent.indexOf('msie') != -1) {   
+        } else if (userAgent.indexOf('edge') != -1) {
+            console.log('Internet Explorerをお使いですね');
+        } else if (userAgent.indexOf('chrome') != -1) {
+            console.log('Google Chromeをお使いですね');
+            alert('safari以外')
+            target.href = "manifest.json"
+        } else if (userAgent.indexOf('safari') != -1) {
+            console.log('Safariをお使いですね');
+            alert('safari')
+            target.href = "manifest.webmanifest";
+        } else if (userAgent.indexOf('firefox') != -1) {
+            console.log('FireFoxをお使いですね');
+            alert('safari以外')
+            target.href = "manifest.json"
+        } else if (userAgent.indexOf('opera') != -1) {
+            console.log('Operaをお使いですね');
+            alert('safari以外')
+            target.href = "manifest.json"
+        } else {
+            console.log('そんなブラウザは知らん');
+        }
+
+        /*
+        if (userAgent.indexOf('safari') != -1) {
+            console.log('Safari以外')
+            alert('safari以外')
+            target.href = "manifest.json"
+        } else {
+            console.log('Safari');
+            alert('safari')
+            target.href = "manifest.webmanifest";
+        }*/
+    </script>
 
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
         integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
