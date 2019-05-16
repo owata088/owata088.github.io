@@ -7,21 +7,21 @@
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--↓アイホンでURLバー非表示するやつ-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <script>
-        //↓Safari判定用ゾ
-        var userAgent = window.navigator.userAgent.toLowerCase();
-        var target = document.getElementById("BrowserSwich")
-        //↓エッジでバグるかもしれない
-        if (userAgent.indexOf('safari') != -1) {
-            console.log('Safari');
-            target.href = "manifest.webmanifest";
-        }else{
-            console.log('Safari以外')
-            target.href = "manifest.json"
-        }
-    </script>
     <link id="BrowserSwich" href="manifest.webmanifest" rel="manifest"/>
+    <script>
+            //↓Safari判定用ゾ
+            var userAgent = window.navigator.userAgent.toLowerCase();
+            var target = document.getElementById("BrowserSwich")
+            //↓エッジでバグるかもしれない
+            if (userAgent.indexOf('safari') != -1) {
+                console.log('Safari');
+                target.href = "manifest.webmanifest";
+            }else{
+                console.log('Safari以外')
+                target.href = "manifest.json"
+            }
+        </script>
+        
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
         integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
         crossorigin="anonymous"></script>
