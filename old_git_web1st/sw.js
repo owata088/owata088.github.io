@@ -13,8 +13,7 @@ var dateCache_v1 = [
     "sw.js",
     "camera.js",
     "style.css",
-    "manifest.json",
-    "camera03.js"
+    "manifest.json"
 ]
 
 
