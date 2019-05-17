@@ -5,50 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <!--↓アイホンでURLバー非表示するやつ--><!--
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link id="BrowserSwich" href="manifest.webmanifest" rel="manifest" />
-    --><!--<script>
-        //↓Safari判定用ゾ
-        var userAgent = window.navigator.userAgent.toLowerCase();
-        var target = document.getElementById("BrowserSwich")
-        //↓エッジでバグるかもしれない
-        if (userAgent.indexOf('msie') != -1) {   
-        } else if (userAgent.indexOf('edge') != -1) {
-            console.log('Internet Explorerをお使いですね');
-        } else if (userAgent.indexOf('chrome') != -1) {
-            console.log('Google Chromeをお使いですね');
-            alert('safari以外')
-            target.href = "manifest.json"
-        } else if (userAgent.indexOf('safari') != -1) {
-            console.log('Safariをお使いですね');
-            alert('safari')
-        } else if (userAgent.indexOf('firefox') != -1) {
-            console.log('FireFoxをお使いですね');
-            alert('safari以外')
-            target.href = "manifest.json"
-        } else if (userAgent.indexOf('opera') != -1) {
-            console.log('Operaをお使いですね');
-            alert('safari以外')
-            target.href = "manifest.json"
-        } else {
-            console.log('そんなブラウザは知らん');
-        }
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
-        integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
-        crossorigin="anonymous"></script>
--->
     <title>htmlでカメラゾ</title>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <<link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
     <header>
         <div class="header-contents">
-
+            
         </div><!-- /.header-contents -->
     </header>
     <div class="main-wrapper">
@@ -63,39 +28,39 @@
         </canvas>
     </div><!-- /.main-wrapper -->
     <footer></footer>
-    <!--画像を表示-->
+        <!--画像を表示-->
+
+        
 
 
-
-
-    <!--標準カメラアプリ依存系-->
-    
+        <!--標準カメラアプリ依存系-->
+        <!--
         <input type="file" id="myImage" accept="image/*">
         <img id="preview">
+        -->
+        <!--カメラ以上-->
         
-    <!--カメラ以上-->
 
+        <!--下記PWAの設定判定周り-->
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js').then(function () {
+                    console.log('サービスワーカ登録成功ゾ');
+                    alert('サービスワーカ登録成功ゾ');
+                }).catch(function (err) {
+                    console.log('サービスワーカ追加できてないじゃん', err);
+                    alert('サービスワーカ追加できてないじゃん');
+                })
+            } else {
+                console.log('サービスワーカ対応してないじゃん');
+                alert('サービスワーカ対応してないじゃん');
+            }
+        </script>
+        <!--PWA以上-->
 
-    <!--下記PWAの設定判定周り-->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(function () {
-                console.log('サービスワーカ登録成功ゾ');
-                alert('サービスワーカ登録成功ゾ');
-            }).catch(function (err) {
-                console.log('サービスワーカ追加できてないじゃん', err);
-                alert('サービスワーカ追加できてないじゃん');
-            })
-        } else {
-            console.log('サービスワーカ対応してないじゃん');
-            alert('サービスワーカ対応してないじゃん');
-        }
-    </script>
-    <!--PWA以上-->
-    <script src="camera.js"> </script>
-    <!--カメラのJSジャンプ-->
-    <script language="JavaScript" type="text/javascript" src="camera03.js"> </script>
-    <!--カメラアプリ依存系取得画像表示-->
+        <script src="camera.js"> </script><!--カメラのJSジャンプ-->
+        <!--<script language="JavaScript" type="text/javascript" src="camera03.js"> </script>-->
+        <!--カメラアプリ依存系取得画像表示-->
 </body>
 
 </html>
