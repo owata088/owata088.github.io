@@ -8,5 +8,5 @@
     "start_url": "https://owata088.github.io/",
   
   
-    "display": "standalone"
+    "display": "browser"
   }
