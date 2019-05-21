@@ -8,5 +8,7 @@
     "start_url": "https://owata088.github.io/android_pwa.html",
   
   
-    "display": "browser"
+    "display": "browser",
+
+    "orientation": "lanfscape"
   }
