@@ -6,14 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <title>htmlでカメラゾ</title>
-    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
-        integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
-        crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" type="text/css">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!--PWA safari起動型用マニフェスト↓-->
-    <link id="BrowserSwich" href="manifest.webmanifest" rel="manifest" />
-    
+    <link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -24,21 +19,7 @@
         </div><!-- /.header-contents -->
     </header>
     <div class="main-wrapper">
-        <!--下記カメラ周りのhtml文（HTML内で直接カメラを操作-->
-        <div class="camera">
-            <video id="video" autoplay playsinline="true">video stream not available</video>
-        </div><br>
-        <select name="dlist"></select>
-        <button id="startbutton">カメラ逝くゾ</button><button id="cameraRestart">カメラをリスタートするゾ</button><br>
-        <canvas id="canvas">
-            <textarea id="readStr"></textarea>
-        </canvas>
-    </div><!-- /.main-wrapper -->
-    <footer></footer>
-        <!--画像を表示-->
-
         
-
 
         <!--標準カメラアプリ依存系-->
         
@@ -47,6 +28,13 @@
         
         <!--カメラ以上-->
         
+
+    </div><!-- /.main-wrapper -->
+    <footer></footer>
+        <!--画像を表示-->
+
+        
+
 
         <!--下記PWAの設定判定周り-->
         <script>
