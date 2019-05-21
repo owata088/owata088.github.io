@@ -1,0 +1,15 @@
+{
+    "short_name": "PWAサイト",
+  
+  
+    "name": "サンプルのPWAサイト",
+  
+  
+    "start_url": "https://owata088.github.io/iphone_pwa.html",
+
+    "orientation": "landscape",
+  
+    "display": "browser"
+
+    
+  }
