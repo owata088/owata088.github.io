@@ -1,0 +1,14 @@
+{
+    "short_name": "PWAサイト",
+  
+  
+    "name": "サンプルのPWAサイト",
+  
+  
+    "start_url": "https://owata088.github.io/android_pwa.html",
+  
+  
+    "display": "browser",
+
+    "orientation": "landscape"
+  }

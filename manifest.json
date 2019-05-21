@@ -5,10 +5,8 @@
     "name": "サンプルのPWAサイト",
   
   
-    "start_url": "https://owata088.github.io/android_pwa.html",
+    "start_url": "https://owata088.github.io",
   
   
-    "display": "browser",
-
-    "orientation": "landscape"
+    "display": "standalone"
   }

@@ -5,16 +5,15 @@
 */
 
 //↓キャッシュバージョン
-var CACHE_NAME = "webcame_v004";
+var CACHE_NAME = "webcame_v002";
 
 //↓キャッシュ保持するファイル
 var dateCache_v1 = [
-    "android_pwa.html",
+    "index.html",
     "sw.js",
     "camera.js",
     "style.css",
-    "manifest.json",
-    "camera03.js"
+    "manifest.json"
 ]
 
 
