@@ -88,7 +88,7 @@ function takepicture() {
         clearphoto()
     }
 }
-function stopCamera(){
+function videoRestartbutton(){
     if(myStream){
       for(track of myStream.getTracks()) track.stop();
       myStream = null;
