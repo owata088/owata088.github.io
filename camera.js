@@ -97,7 +97,7 @@ function takepicture() {
     }
 }
 function videoRestartbutton(){
-    navigator.mediaDevices.getUserMedia({ audio: false, video:{ width:320, height:240} })
+    navigator.mediaDevices.getUserMedia(constrains)
     .then(function(stream){
       if("srcObject" in video) video.srcObject = stream;
       else video.src = window.URL.createObjectURL(stream);
