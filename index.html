@@ -22,7 +22,7 @@
             <video id="video" autoplay playsinline="true">video stream not available</video>
         </div><br>
         <select name="dlist"></select>
-        <button id="startbutton">カメラ逝くゾ</button><button id="cameraRestart">カメラをリスタートするゾ</button><br>
+        <button id="startbutton">カメラ逝くゾ</button><button id="videoRestartbutton">カメラをリスタートするゾ</button><br>
         <canvas id="canvas">
             <textarea id="readStr"></textarea>
         </canvas>
@@ -34,10 +34,10 @@
 
 
     <!--標準カメラアプリ依存系-->
-    
-        <input type="file" id="myImage" accept="image/*">
-        <img id="preview">
-        
+
+    <input type="file" id="myImage" accept="image/*">
+    <img id="preview">
+
     <!--カメラ以上-->
 
 
@@ -56,7 +56,7 @@
             alert('サービスワーカ対応してないじゃん');
         }
 
-        document.querySelector('#cameraRestart').addEventListener('click', function(e){
+        document.querySelector('#cameraRestart').addEventListener('click', function (e) {
             video.pause();
             localMediaStream.start();
         }, false);
@@ -64,7 +64,7 @@
     <!--PWA以上-->
     <script src="camera.js"> </script>
     <!--カメラのJSジャンプ-->
-    
+
     <!--カメラアプリ依存系取得画像表示-->
 </body>
 
