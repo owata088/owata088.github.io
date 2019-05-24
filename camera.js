@@ -99,10 +99,10 @@ function takepicture() {
 function videoRestartbutton(){
     navigator.mediaDevices.getUserMedia({ audio: false, video:{ width:320, height:240} })
     .then(function(stream){
-      if("srcObject" in myVideo) myVideo.srcObject = stream;
+      if("srcObject" in Video) Video.srcObject = stream;
       else myVideo.src = window.URL.createObjectURL(stream);
-      myVideo.onloadedmetadata = function(e){
-        myVideo.play();
+      Video.onloadedmetadata = function(e){
+        video.play();
         myStream = stream;
       };
     })
