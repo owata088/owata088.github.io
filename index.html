@@ -55,6 +55,11 @@
             console.log('サービスワーカ対応してないじゃん');
             alert('サービスワーカ対応してないじゃん');
         }
+
+        document.querySelector('#cameraRestart').addEventListener('click', function(e){
+            video.pause();
+            localMediaStream.stop();
+        }, false);
     </script>
     <!--PWA以上-->
     <script src="camera.js"> </script>
