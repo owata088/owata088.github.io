@@ -25,7 +25,6 @@ function startup() {
     canvas = document.getElementById('canvas')
     photo = document.getElementById('photo')
     startbutton = document.getElementById('startbutton')
-    videoTracks = stream.getvideoTracks()
 
     videoStart()
 
