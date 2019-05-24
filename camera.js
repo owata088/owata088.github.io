@@ -46,10 +46,10 @@ function startup() {
         takepicture()
         ev.preventDefault()
         //カメラの動作を停止？
-        streaming = true
-        videoTracks.forEach(function(track) {
-            track.stop()           
-        });
+        streaming = true  
+        videoTracks.forEach(function(track){
+            track.stop()
+        });        
     }, false);
 
     clearphoto()
@@ -64,6 +64,7 @@ function videoStart() {
         .then(function (stream) {
             video.srcObject = stream
             video.play()
+            videoTracks = stream.getAudioTracks();
         })
         .catch(function (err) {
             console.log("An error occured! " + err)
