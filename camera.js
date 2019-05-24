@@ -14,7 +14,7 @@ let canvas = null
 let photo = null
 let startbutton = null
 let constrains = { video: {facingMode: 'environment'}, audio: false }
-let videoTracks;
+let myStream = null;
 /**
  * ユーザーのデバイスによるカメラ表示を開始し、
  * 各ボタンの挙動を設定する
@@ -45,10 +45,7 @@ function startup() {
         takepicture()
         ev.preventDefault()
         //カメラの動作を停止？
-        streaming = true  
-        videoTracks.forEach(function(track){
-            track.stop()
-        });        
+        streaming = true          
     }, false);
 
     clearphoto()
@@ -63,7 +60,7 @@ function videoStart() {
         .then(function (stream) {
             video.srcObject = stream
             video.play()
-            videoTracks = stream.getAudioTracks();
+            myStream = stream;
         })
         .catch(function (err) {
             console.log("An error occured! " + err)
@@ -91,6 +88,15 @@ function takepicture() {
         clearphoto()
     }
 }
+function stopCamera(){
+    if(myStream){
+      for(track of myStream.getTracks()) track.stop();
+      myStream = null;
+    };
+    myVideo.pause();
+    if("srcObject" in myVideo) myVideo.srcObject = null;
+    else myVideo.src = null;
+  };
 //下記はカメラデータの送信部分
 /*
 function send() {
