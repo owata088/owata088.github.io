@@ -14,6 +14,7 @@ let canvas = null
 let photo = null
 let startbutton = null
 let constrains = { video: {facingMode: 'environment'}, audio: false }
+let videoTracks;
 /**
  * ユーザーのデバイスによるカメラ表示を開始し、
  * 各ボタンの挙動を設定する
@@ -24,6 +25,7 @@ function startup() {
     canvas = document.getElementById('canvas')
     photo = document.getElementById('photo')
     startbutton = document.getElementById('startbutton')
+    videoTracks = stream.getvideoTracks()
 
     videoStart()
 
@@ -45,8 +47,9 @@ function startup() {
         ev.preventDefault()
         //カメラの動作を停止？
         streaming = true
-        video.pause();
-        localMediaStream.stop();
+        videoTracks.forEach(function(track) {
+            track.stop()           
+        });
     }, false);
 
     clearphoto()
