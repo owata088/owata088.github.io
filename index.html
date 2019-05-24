@@ -56,10 +56,14 @@
             alert('サービスワーカ対応してないじゃん');
         }
 
-        document.querySelector('#cameraRestart').addEventListener('click', function (e) {
+        document.querySelector('#startbutton').addEventListener('click', function (e) {
+            video.pause();
+            localMediaStream.stop();
+        }, false);
+        document.querySelector('#videoRestartbutton').addEventListener('click', function (e) {
             video.pause();
             localMediaStream.start();
-        }, false);
+        }, true);
     </script>
     <!--PWA以上-->
     <script src="camera.js"> </script>
