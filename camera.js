@@ -45,7 +45,15 @@ function startup() {
         takepicture()
         ev.preventDefault()
         //カメラの動作を停止？
-        streaming = true          
+        streaming = true    
+        
+        if(myStream){
+            for(track of myStream.getTracks()) track.stop();
+            myStream = null;
+          };
+          myVideo.pause();
+          if("srcObject" in myVideo) myVideo.srcObject = null;
+          else myVideo.src = null;
     }, false);
 
     clearphoto()
@@ -89,13 +97,17 @@ function takepicture() {
     }
 }
 function videoRestartbutton(){
-    if(myStream){
-      for(track of myStream.getTracks()) track.stop();
-      myStream = null;
-    };
-    myVideo.pause();
-    if("srcObject" in myVideo) myVideo.srcObject = null;
-    else myVideo.src = null;
+    navigator.mediaDevices.getUserMedia({ audio: false, video:{ width:320, height:240} })
+    .then(function(stream){
+      if("srcObject" in myVideo) myVideo.srcObject = stream;
+      else myVideo.src = window.URL.createObjectURL(stream);
+      myVideo.onloadedmetadata = function(e){
+        myVideo.play();
+        myStream = stream;
+      };
+    })
+    .catch(function(err){ console.log(err.name + ": " + err.message); });
+  
   };
 //下記はカメラデータの送信部分
 /*
