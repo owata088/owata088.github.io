@@ -51,9 +51,9 @@ function startup() {
             for(track of myStream.getTracks()) track.stop();
             myStream = null;
           };
-          myVideo.pause();
-          if("srcObject" in myVideo) myVideo.srcObject = null;
-          else myVideo.src = null;
+          video.pause();
+          if("srcObject" in video) video.srcObject = null;
+          else video.src = null;
     }, false);
 
     clearphoto()
@@ -99,9 +99,9 @@ function takepicture() {
 function videoRestartbutton(){
     navigator.mediaDevices.getUserMedia({ audio: false, video:{ width:320, height:240} })
     .then(function(stream){
-      if("srcObject" in Video) Video.srcObject = stream;
-      else myVideo.src = window.URL.createObjectURL(stream);
-      Video.onloadedmetadata = function(e){
+      if("srcObject" in video) video.srcObject = stream;
+      else video.src = window.URL.createObjectURL(stream);
+      video.onloadedmetadata = function(e){
         video.play();
         myStream = stream;
       };
