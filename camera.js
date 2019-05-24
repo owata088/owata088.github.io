@@ -41,6 +41,8 @@ function startup() {
 
     // 「画像撮影」ボタンをとる挙動を定義
     startbutton.addEventListener('click', function (ev) {
+        video.pause();
+        localMediaStream.stop();
         takepicture()
         ev.preventDefault()
         //カメラの動作を停止？
