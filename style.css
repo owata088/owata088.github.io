@@ -3,7 +3,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	width: auto;
+	width: 1080;
 	height: auto;
 	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
@@ -45,8 +45,7 @@ header{
 .camera{
 	position: relative;
 	box-sizing:border-box;
-	width: auto;
-	max-width: 720px;
+	max-width: auto;
 	margin: 0 auto;
 	padding:30px calc(50% - 320px);
 	background-color: #fff;
