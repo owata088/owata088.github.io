@@ -45,7 +45,6 @@ header{
 .camera{
 	position: relative;
 	box-sizing:border-box;
-	max-width: auto;
 	margin: 0 auto;
 	padding:30px calc(50% - 320px);
 	background-color: #fff;
