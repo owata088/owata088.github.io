@@ -48,10 +48,10 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js').then(function () {
                 console.log('サービスワーカ登録成功ゾ');
-                alert('サービスワーカ登録成功ゾ');
+                
             }).catch(function (err) {
                 console.log('サービスワーカ追加できてないじゃん', err);
-                alert('サービスワーカ追加できてないじゃん');
+                
             })
         } else {
             console.log('サービスワーカ対応してないじゃん');
