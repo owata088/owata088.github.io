@@ -9,12 +9,18 @@ var CACHE_NAME = "webcame_v004";
 
 //↓キャッシュ保持するファイル
 var dateCache_v1 = [
-    "android_pwa.html",
+    "iphone_pwa.html",
     "sw.js",
     "camera.js",
     "style.css",
     "manifest.json",
-    "camera03.js"
+    "camera03.js",
+    "icon/icon-48.png",
+    "icon/icon-96.png",
+    "icon/icon-144.png",
+    "icon/icon-192.png",
+    "icon/icon-256.png",
+    "icon/icon-512.png",
 ]
 
 
