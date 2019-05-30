@@ -46,8 +46,8 @@
     <!--下記PWAの設定判定周り-->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(function () {
-                console.log('サービスワーカ登録成功ゾ');
+            navigator.serviceWorker.register('sw.js').then(function (registration) {
+                console.log('サービスワーカ登録成功ゾ', registration.scope);
                 
             }).catch(function (err) {
                 console.log('サービスワーカ追加できてないじゃん', err);
