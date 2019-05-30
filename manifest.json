@@ -1,47 +1,40 @@
 {
-    "short_name": "PWAサイト",
-  
-  
-    "name": "サンプルのPWAサイト",
-  
-  
-    "start_url": "index.html",
-
-    "orientation": "landscape",
-  
-    "display": "standalone",
-
-    "icons": [
-      {
-        "src": "/icon/icon-48.png",
-        "sizes": "48x48",
-        "type": "image/png"
-      },
-      {
-        "src": "/icon/icon-96.png",
-        "sizes": "96x96",
-        "type": "image/png"
-      },
-      {
-        "src": "/icon/icon-144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      },
-      {
-        "src": "/icon/icon-192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/icon/icon-256.png",
-        "sizes": "256x256",
-        "type": "image/png"
-      },
-      {
-        "src": "/icon/icon-512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-
-  }
+    "short_name":"PWA-jp",
+    "name":"PWA_jp",
+    "icons": 
+    [
+        {
+            "src": "/icon/icon_png_48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon/icon_png_96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "/icon/icon_png_144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/icon/icon_png_192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/icon/icon_png_256x256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "/icon/icon_png_512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "display":"standalone",
+    "start_url":"index.html",
+    "orientation": "landscape"
+}
