@@ -5,9 +5,10 @@
 */
 
 //↓キャッシュバージョン
-var CACHE_NAME = "webcame_v005";
+var CACHE_NAME = "webcame_v006";
 
 //↓キャッシュ保持するファイル
+/*
 var dateCache_v1 = [
     "iphone_pwa.html",
     "index.html",
@@ -22,7 +23,10 @@ var dateCache_v1 = [
     "icon/icon-192.png",
     "icon/icon-256.png",
     "icon/icon-512.png",
-]
+] */
+
+var dateCache_v1 = [
+    '/owata088.github.io/',];
 
 
 self.addEventListener('install', function (event) {
