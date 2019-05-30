@@ -5,11 +5,12 @@
 */
 
 //↓キャッシュバージョン
-var CACHE_NAME = "webcame_v004";
+var CACHE_NAME = "webcame_v005";
 
 //↓キャッシュ保持するファイル
 var dateCache_v1 = [
     "iphone_pwa.html",
+    "index.html",
     "sw.js",
     "camera.js",
     "style.css",
