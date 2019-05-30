@@ -23,11 +23,13 @@
     <header>
         
         <!--下記カメラ周りのhtml文（HTML内で直接カメラを操作-->
+        <!--
         <div class="cameraUIset">
             <video id="video" autoplay playsinline="true">video stream not available</video>
             <br><select name="dlist"></select>
             <button id="startbutton">カメラ逝くゾ</button><button onclick="videoRestartbutton()">カメラをリスタートするゾ</button><br>
         </div>
+    -->
         <!---->
 
     </header>
@@ -45,10 +47,10 @@
 
 
     <!--標準カメラアプリ依存系-->
-
+<!--
     <input type="file" id="myImage" accept="image/*">
     <img id="preview">
-
+-->
     <!--カメラ以上-->
 
 
@@ -79,8 +81,8 @@
 
         */
     </script>
-    <!--PWA以上-->
-    <script src="camera.js"> </script>
+    <!--PWA以上--><!--
+    <script src="camera.js"> </script>-->
     <!--カメラのJSジャンプ-->
 
     <!--カメラアプリ依存系取得画像表示-->
