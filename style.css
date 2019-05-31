@@ -51,8 +51,8 @@ header {
 
 video {
 	object-fit: fill;
-	width: 20vw;
-	height: 20vh;
+	width: 100%;
+	height: 80%;
 	margin: auto;
 	padding: 0;
 }
