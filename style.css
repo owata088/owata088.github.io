@@ -50,6 +50,11 @@ header {
 }
 
 video {
+	object-fit: fill;
+	width: 20vw;
+	height: 20vh;
+	margin: auto;
+	padding: 0;
 }
 
 .cameraUIset {
