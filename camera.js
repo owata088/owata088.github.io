@@ -118,8 +118,6 @@ function send() {
 //#########################線の描画（＊注意原文ままではカメラ撮影画像表示と競合の可能性大
 // videoは非表示にしておく
 video.style.display = 'none';
-
-var canvas = document.getElementById('canvas');
 // そのまま表示すると鏡像にならないので反転させておく
 canvas.style.transform = 'rotateY(180deg)';
 
