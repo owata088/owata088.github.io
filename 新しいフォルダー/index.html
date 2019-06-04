@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>線</h1>
+        <canvas id = "line" width="1000" height="1000"></canvas>
+
+        <script type="text/javascript">
+            //読み込み時に実行する
+            onload = function() {
+              /* 線を引く */
+              var line_canvas = document.getElementById("line"); 
+              var line_ctx = line_canvas.getContext("2d");
+              line_ctx.beginPath();
+              // 開始位置に移動する
+              line_ctx.moveTo(50, 50);
+              // 線を引く
+              line_ctx.lineTo(50, 500);
+              line_ctx.closePath();
+              line_ctx.stroke();
+            }
+            </script>
+
+    </body>
+</html>
