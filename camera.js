@@ -73,6 +73,26 @@ function videoStart() {
         .catch(function (err) {
             console.log("An error occured! " + err)
         })
+    
+//#########################線の描画（＊注意原文ままではカメラ撮影画像表示と競合の可能性大
+// videoは非表示にしておく
+video.style.display = 'none';
+// そのまま表示すると鏡像にならないので反転させておく
+//canvas.style.transform = 'rotateY(180deg)';
+
+//var context2 = canvas.getContext('2d');
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+navigator.getUserMedia({video: true, audio: false}, function (stream) {
+    video.src = URL.createObjectURL(stream);
+    draw();
+}, function () {});
+
+// videoの映像をcanvasに描画する
+var draw = function () {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    requestAnimationFrame(draw);
+};       
 }
 
 /**
@@ -115,23 +135,4 @@ function send() {
 }
 */
 
-//#########################線の描画（＊注意原文ままではカメラ撮影画像表示と競合の可能性大
-// videoは非表示にしておく
-video.style.display = 'none';
-// そのまま表示すると鏡像にならないので反転させておく
-canvas.style.transform = 'rotateY(180deg)';
-
-var context = canvas.getContext('2d');
-
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
-navigator.getUserMedia({video: true, audio: false}, function (stream) {
-    video.src = URL.createObjectURL(stream);
-    draw();
-}, function () {});
-
-// videoの映像をcanvasに描画する
-var draw = function () {
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    requestAnimationFrame(draw);
-};
 startup()
