@@ -4,8 +4,8 @@
 カメラで撮影した画像の送信先の記述
 
 */
-let width = "1920"   // We will scale the photo width to this
-let height = "1080"     // This will be computed based on the input stream
+let width = "480"   // We will scale the photo width to this
+let height = "360"     // This will be computed based on the input stream
 
 let streaming = false
 
@@ -121,4 +121,28 @@ function send() {
     })
 }
 */
+
+//#########################線の描画？
+
+var video = document.getElementById('video');
+// videoは非表示にしておく
+video.style.display = 'none';
+
+var canvas = document.getElementById('canvas');
+// そのまま表示すると鏡像にならないので反転させておく
+canvas.style.transform = 'rotateY(180deg)';
+
+var context = canvas.getContext('2d');
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+navigator.getUserMedia({video: true, audio: false}, function (stream) {
+    video.src = URL.createObjectURL(stream);
+    draw();
+}, function () {});
+
+// videoの映像をcanvasに描画する
+var draw = function () {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    requestAnimationFrame(draw);
+};
 startup()
