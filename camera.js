@@ -55,8 +55,6 @@ function startup() {
           if("srcObject" in video) video.srcObject = null;
           else video.src = null;
     }, false);
-
-    clearphoto()
 }
 
 /**
