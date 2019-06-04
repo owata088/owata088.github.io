@@ -74,13 +74,6 @@ function videoStart() {
             console.log("An error occured! " + err)
         })
 }
-/* canvasの写真領域を初期化する
- */
-function clearphoto() {
-    let context = canvas.getContext('2d')
-    context.fillStyle = "#AAA"
-    context.fillRect(0, 0, canvas.width, canvas.height)
-}
 
 /**
  * カメラに表示されている現在の状況を撮影する
@@ -122,9 +115,7 @@ function send() {
 }
 */
 
-//#########################線の描画？
-
-var video = document.getElementById('video');
+//#########################線の描画（＊注意原文ままではカメラ撮影画像表示と競合の可能性大
 // videoは非表示にしておく
 video.style.display = 'none';
 
