@@ -15,6 +15,7 @@ html, body {
 
 header {
 	width: 100vw;
+	height: 80vh;
 	background-color: #23628f;
 	background-position: 50% 50%;
 	border-top: #20567d 10px solid;
@@ -48,13 +49,14 @@ header {
 	font-size: 14px;
 	font-weight: normal;
 }
-
-video {
-	object-fit: fill;
-	width: 50%;
-	height: 50%;
-	margin: auto;
-	padding: 0;
+.videoline{
+	min-height: 520px;
+}
+video{
+	position: absolute;  z-index: 2;
+}
+canvas{
+	position: absolute;  z-index: 1;
 }
 
 .cameraUIset {

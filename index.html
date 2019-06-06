@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <!-- PWA用設定ファイル -->
-   <!-- <link rel="manifest" href="manifest.json">-->
+    <!-- <link rel="manifest" href="manifest.json">-->
 
     <!-- スタイルシートの読み込み -->
     <link rel="stylesheet" href="style.css">
@@ -23,9 +23,9 @@
     <header>
         <!--下記カメラ周りのhtml文（HTML内で直接カメラを操作-->
         <div class="cameraUIset">
-            <div id="bg">
+            <div calss="videoline">
                 <video id="video" autoplay playsinline="true">video stream not available</video>
-                <canvas id="canvas" width="480" height="360"></canvas>
+                <canvas id="videocanvas"></canvas>
             </div>
             <br>
             <button id="startbutton">カメラ逝くゾ</button><button onclick="videoRestartbutton()">カメラをリスタートするゾ</button><br>
