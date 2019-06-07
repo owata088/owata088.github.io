@@ -15,7 +15,7 @@ let photo = null
 let startbutton = null
 let constrains = { video: { facingMode: 'environment' }, audio: false }
 let myStream = null
-let videocanvas = null
+//let videocanvas = null
 /**
  * ユーザーのデバイスによるカメラ表示を開始し、
  * 各ボタンの挙動を設定する
@@ -25,7 +25,7 @@ function startup() {
     video = document.getElementById('video')
     canvas = document.getElementById('canvas')
     photo = document.getElementById('photo')
-    videocanvas = document.getElementById('videocanvas')
+  //  videocanvas = document.getElementById('videocanvas')
     startbutton = document.getElementById('startbutton')
 
     videoStart()
@@ -38,8 +38,8 @@ function startup() {
             video.setAttribute('height', height)
             //canvas.setAttribute('width', width)
             //canvas.setAttribute('height', height)
-            videocanvas.setAttribute('height', height)
             videocanvas.setAttribute('width', width)
+            videocanvas.setAttribute('height', height)
             streaming = true
         }
     }, false)
@@ -71,10 +71,12 @@ function videoStart() {
             video.srcObject = stream
             video.play()
             myStream = stream;
+            //線描画読み出し
+            linetrace()
         })
         .catch(function (err) {
             console.log("An error occured! " + err)
-        })          
+        })
 }
 
 /**
@@ -116,5 +118,16 @@ function send() {
     })
 }
 */
-
+function linetrace() {
+    //線を引く 
+    var line_canvas = document.getElementById("videocanvas");
+    var line_ctx = line_canvas.getContext("2d");
+    line_ctx.beginPath();
+    // 開始位置に移動する
+    line_ctx.moveTo(50, 50);
+    // 線を引く
+    line_ctx.lineTo(50, 500);
+    line_ctx.closePath();
+    line_ctx.stroke();
+}
 startup()
