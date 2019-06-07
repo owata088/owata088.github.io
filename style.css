@@ -53,10 +53,14 @@ header {
 	min-height: 520px;
 }
 video{
-	position: absolute;  z-index: 2;
+	left: 0;
+	margin: 0;
+	position: fixed; 
+	top: 0;
+	 z-index: -100;
 }
-canvas{
-	position: absolute;  z-index: 1;
+videocanvas{
+	position: fixed; z-index: 999;
 }
 
 .cameraUIset {
