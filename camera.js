@@ -41,7 +41,7 @@ function startup() {
     }, false)
 
     // 「画像撮影」ボタンをとる挙動を定義
-    video.addEventListener('click', function (ev) {
+    Line_pile_up.addEventListener('click', function (ev) {
         takepicture()
         ev.preventDefault()
         //カメラの動作を停止？
