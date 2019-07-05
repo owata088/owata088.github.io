@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- ビューポートの設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- PWA用設定ファイル -->
+    <!-- <link rel="manifest" href="manifest.json">-->
+
+    <!-- スタイルシートの読み込み -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>麻雀カメラ</title>
+</head>
+
+<body>
+    <header>
+        <!--下記カメラ周りのhtml文（HTML内で直接カメラを操作-->
+        <div class="cameraUIset">
+            <div calss="videoline">
+                <video id="video" autoplay playsinline="true" alt="Max-width：100%サンプル">video stream not
+                    available</video>
+                <canvas id="videocanvas" width="520" height="390"></canvas>
+            </div>
+            <br>
+            <button id="startbutton">カメラ逝くゾ</button><button onclick="videoRestartbutton()">カメラをリスタートするゾ</button><br>
+        </div>
+    </header>
+    <script>
+        /*
+        //<!--service workerの登録関係 -->
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service_worker.js').then(function (registration) {
+                console.log('ServiceWorker registration successful with scope', registration.scope);
+            }).catch(function (err) {
+                console.log('ServiceWorker registration faild: ', err);
+            });
+        }
+        //ボタンぞ?
+        document.querySelector('#startbutton').addEventListener('click', function (e) {
+            video.pause();
+            localMediaStream.stop();
+        }, false);
+        */
+    </script>
+    <script src="camera.js"> </script>
+    <script type="text/javascript">
+        //読み込み時に実行する
+        onload = function () {
+            /* 線を引く */
+            var line_canvas = document.getElementById("videocanvas");
+            var line_ctx = line_canvas.getContext("2d");
+            line_ctx.beginPath();
+            // 開始位置に移動する
+            line_ctx.moveTo(50, 50);
+            // 線を引く
+            line_ctx.lineTo(50, 500);
+            line_ctx.closePath();
+            line_ctx.stroke();
+        }
+    </script>
+
+    <!-- JavaScriptの読み込み -->
+</body>
+
+</html>

@@ -1,72 +1,51 @@
-<!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="utf-8">
-
-    <!-- ビューポートの設定 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-    <!-- PWA用設定ファイル -->
-    <!-- <link rel="manifest" href="manifest.json">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- スタイルシートの読み込み -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_idx.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- manifest.jsonを呼び出しています -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+        // service workerが有効なら、service-worker.js を登録します
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service_worker.js').then(function () { console.log('Service Worker Registered'); });
+        }
+    </script>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="api.js"></script>
 
     <title>麻雀カメラ</title>
 </head>
 
 <body>
-    <header>
-        <!--下記カメラ周りのhtml文（HTML内で直接カメラを操作-->
-        <div class="cameraUIset">
-            <div calss="videoline">
-                <video id="video" autoplay playsinline="true" alt="Max-width：100%サンプル">video stream not
-                    available</video>
-                <canvas id="videocanvas" width="520" height="390"></canvas>
-            </div>
-            <br>
-            <button id="startbutton">カメラ逝くゾ</button><button onclick="videoRestartbutton()">カメラをリスタートするゾ</button><br>
-        </div>
-    </header>
-    <script>
-        /*
-        //<!--service workerの登録関係 -->
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service_worker.js').then(function (registration) {
-                console.log('ServiceWorker registration successful with scope', registration.scope);
-            }).catch(function (err) {
-                console.log('ServiceWorker registration faild: ', err);
-            });
-        }
-        //ボタンぞ?
-        document.querySelector('#startbutton').addEventListener('click', function (e) {
-            video.pause();
-            localMediaStream.stop();
-        }, false);
-        */
-    </script>
-    <script src="camera.js"> </script>
-    <script type="text/javascript">
-        //読み込み時に実行する
-        onload = function () {
-            /* 線を引く */
-            var line_canvas = document.getElementById("videocanvas");
-            var line_ctx = line_canvas.getContext("2d");
-            line_ctx.beginPath();
-            // 開始位置に移動する
-            line_ctx.moveTo(50, 50);
-            // 線を引く
-            line_ctx.lineTo(50, 500);
-            line_ctx.closePath();
-            line_ctx.stroke();
-        }
-    </script>
+    <!-- 縦画面時に表示 -->
+    <h1 class="error">画面を横に傾けてください</h1>
 
-    <!-- JavaScriptの読み込み -->
+    <!-- 横画面時に表示 -->
+    <h1 class="title">麻雀カメラ</h1>
+    <form action="web_camera.html" method="GET">
+        <div class="button_div">
+            写真を撮る
+            <button class="btn" type="submit">写真を撮る</button>
+        </div>
+    </form>
+    <form id="img_form" action="https://mahjong.syado.net/img_api/post" method="POST" enctype="multipart/form-data">
+        <div class="button_div">
+            ファイルを選択
+            <input class="btn" onchange="img_form_send()" type="file" name="image"
+                accept="image/png, image/jpeg, image/jpg">
+        </div>
+    </form>
+
+    <div class="loading">
+        <div class="animation">画像を送信しています。<br>しばらくお待ちください。</div>
+    </div>
 </body>
 
 </html>

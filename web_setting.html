@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- ビューポートの設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- スタイルシートの読み込み -->
+    <link rel="stylesheet" href="style_set.css">
+
+    <!-- JavaScriptの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="modal_set.js"></script>
+    <script src="web_setting.js"></script>
+
+    <title>麻雀カメラ</title>
+</head>
+
+<body>
+    <!-- 縦画面時に表示 -->
+    <h1 class="error" id="muki">画面を横に傾けてください</h1>
+
+    <!-- 横画面時に表示 -->
+    <!-- 手牌、和了牌 -->
+    <div class="wrapper">
+        <div class="column_tehai">
+            <h2 id="title" class="title">手牌</h2>
+            <button id="10" type="button" onclick="modal_open_naki(this.id)">ポン</button>
+            <button id="20" type="button" onclick="modal_open_naki(this.id)">チー</button>
+            <button id="30" type="button" onclick="modal_open_naki(this.id)">明カン</button>
+            <button id="40" type="button" onclick="modal_open_naki(this.id)">暗カン</button>
+        </div>
+        <div class="column_horahai">
+            <h2 class="title">和了牌</h2>
+        </div>
+    </div>
+    <div id="tehai" class="tehai">
+        <script>
+            var args = getUrlVars();
+            var ar = ["tehai_01", "tehai_02", "tehai_03", "tehai_04", "tehai_05", "tehai_06", "tehai_07", "tehai_08", "tehai_09", "tehai_10", "tehai_11", "tehai_12", "tehai_13", "agarihai"];
+            for (var j = 0; j < 14; j++) {
+                var hai = args[String(j)];
+                if (hai != undefined) {
+                    var hai_0 = hai.slice(0, 1);
+                    var hai_1 = hai.slice(1);
+                    document.write(`<img id="${ar[j]}" src="hai/${hai_0}/${hai_1}.png" alt="${hai}" class="none" onclick="modal_open(this.id)">`);
+                }
+                else {
+                    document.write(`<img id="${ar[j]}" src="hai/h/error.png" alt="error" class="none" onclick="modal_open(this.id)">`);
+                }
+            }
+        </script>
+    </div>
+
+    <!-- ドラ、風牌、役 -->
+    <div class="wrapper">
+        <!-- ドラ -->
+        <div class="column_dora">
+            <div class="info">
+                <h2>ドラ</h2>
+                <div class="dora1">
+                    <script>
+                        var ar = ["dora_01", "dora_02", "dora_03", "dora_04", "dora_05"];
+                        for (var j of ar) {
+                            document.write(`<img id="${j}" src="hai/h/error.png" alt="error" onclick="modal_open(this.id)">`);
+                        }
+                    </script>
+                </div>
+                <div class="dora2">
+                    <script>
+                        var ar = ["dora_06", "dora_07", "dora_08", "dora_09", "dora_10"];
+                        for (var j of ar) {
+                            document.write(`<img id="${j}" src="hai/h/error.png" alt="error" onclick="modal_open(this.id)">`);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 風牌 -->
+        <div class="column_kaze">
+            <div class="info">
+                <h2 class>風牌</h2>
+                <div class="wrapper">
+                    <div class="column_kazehai">
+                        <img src="hai/h/1.png" id="bakaze" alt="1" onclick="changewind(this.id, this.alt)">
+                    </div>
+                    <div class="column_title">
+                        <h3 class="ba">場</h3>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="column_kazehai">
+                        <img src="hai/h/1.png" id="jikaze" alt="1" onclick="changewind(this.id, this.alt)">
+                    </div>
+                    <div class="column_title">
+                        <h3 class="ji">家</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 役 -->
+        <div class="column_yaku">
+            <div class="info">
+                <h2>役</h2>
+                <div class="wrapper">
+                    <div class="yaku">
+                        <div class="checkbox_box">
+                            <label>
+                                <input id="tumo" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="tumo()" />
+                                <span class="checkbox-parts">ツモ</span>
+                            </label>
+                            <label>
+                                <input id="wriichi" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="wriichi()" />
+                                <span class="checkbox-parts">ダブル立直</span>
+                            </label>
+                            <label>
+                                <input id="rinshan" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="rinshan()" />
+                                <span class="checkbox-parts">嶺上開花</span>
+                            </label>
+                            <label>
+                                <input id="haitei" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="haitei()" />
+                                <span class="checkbox-parts">海底・河底</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="yaku">
+                        <div class="checkbox_box">
+                            <label>
+                                <input id="riichi" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="riichi()" />
+                                <span class="checkbox-parts">立直</span>
+                            </label>
+                            <label>
+                                <input id="ippatsu" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="ippatsu()" />
+                                <span class="checkbox-parts">一発</span>
+                            </label>
+                            <label>
+                                <input id="chankan" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="chankan()" />
+                                <span class="checkbox-parts">槍槓</span>
+                            </label>
+                            <label>
+                                <input id="tenhou" class="checkbox-input" name="checkbox[]" type="checkbox"
+                                    onclick="tenhou()" />
+                                <span class="checkbox-parts">天和・地和</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ボタン -->
+    <form action="index.html" method="GET">
+        <button id="back" type="submit">撮りなおす</button>
+    </form>
+    <button id="calc" onclick="calc()">計算する</button>
+
+    <!-- 牌選択のモーダルウィンドウ -->
+    <div id="modal-content">
+        <div class="hai">
+            <div class="manzu" id="syurui">
+                <script>
+                    var i = "m"
+                    var ar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "r"];
+                    for (var j of ar) {
+                        document.write(`<img src="hai/${i}/${j}.png" alt="${i}${j}" onclick="hai_change(this.src, this.alt)">`);
+                    }
+                </script>
+            </div>
+            <div class="pinzu" id="syurui">
+                <script>
+                    var i = "p"
+                    var ar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "r"];
+                    for (var j of ar) {
+                        document.write(`<img src="hai/${i}/${j}.png" alt="${i}${j}" onclick="hai_change(this.src, this.alt)">`);
+                    }
+                </script>
+            </div>
+            <div class="souzu" id="syurui">
+                <script>
+                    var i = "s"
+                    var ar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "r"];
+                    for (var j of ar) {
+                        document.write(`<img src="hai/${i}/${j}.png" alt="${i}${j}" onclick="hai_change(this.src, this.alt)">`);
+                    }
+                </script>
+            </div>
+            <div class="jihai" id="syurui">
+                <script>
+                    var i = "h"
+                    var ar = ["1", "2", "3", "4", "5", "6", "7", "error", "error", "error"];
+                    for (var j of ar) {
+                        if (j != "error") document.write(`<img src="hai/${i}/${j}.png" alt="${i}${j}" onclick="hai_change(this.src, this.alt)">`);
+                        else document.write(`<img src="hai/${i}/${j}.png" alt="${j}" onclick="hai_change(this.src, this.alt)">`);
+                    }
+                </script>
+            </div>
+        </div>
+        <button type="button" id="modal-close" class="close-chng">閉じる</button>
+    </div>
+
+    <!-- 計算結果のモーダルウィンドウ -->
+    <div id="modal-content-rslt">
+        <h2>和了形</h2>
+        <div id="hourakei" class="hourakei">
+        </div>
+        <div class="wrapper">
+            <div class="column_modal">
+                <h2>役</h2>
+                <div class="wrapper_yaku">
+                    <div id="yaku_name" class="column_m_yaku">
+                        <p>立直</p>
+                    </div>
+                    <div id="yaku_han" class="column_m_han">
+                        <p>1翻</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column_modal">
+                <h2>点数</h2>
+                <div id="modal_ten" class="modal_ten">
+                    <p id="han">10翻100符</p>
+                    <p id="ten">親:32000 子:16000</p>
+                </div>
+                <div id="modal_mangan" class="modal_mangan">
+                    <p>倍満</p>
+                </div>
+            </div>
+        </div>
+        <button type="button" id="modal-close" class="close-rslt" onclick="naki_reset()">閉じる</button>
+        <form action="index.html" method="GET">
+            <button id="back" type="submit" class="close-rslt">終了する</button>
+        </form>
+    </div>
+
+    <!-- 鳴きのモーダルウィンドウ -->
+    <div id="modal-content-naki">
+        <h2 id="naki_title" class="title">ポンした牌を選択してください</h2>
+        <div id="tehai_naki" class="tehai_naki">
+
+        </div>
+        <h2>既に鳴いている牌を選択した場合は解除されます</h2>
+        <button type="button" id="modal-close" class="close-naki" onclick="naki_reset()">キャンセル</button>
+    </div>
+</body>
+
+</html>

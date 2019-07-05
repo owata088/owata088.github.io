@@ -1,0 +1,448 @@
+@media screen and (orientation: landscape) {
+    /* 画面が横向きのスタイル */
+    * {
+        margin: 0%; padding: 0%;
+    }
+    /* 縦画面用のテキストを非表示にする */
+    .error {
+        display: none;
+    }
+
+    /* メイン */
+    /* 項目名 */
+    h2 {
+        font-size: 5vh;
+        line-height: 13vh;
+        text-align: center;
+        height: 12vh;
+        /* border: solid 1px #0000;         */
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.25);
+        width: calc( 100% - 0.5vw );
+        margin: 0 0.25vw 0 0.25vw;
+    }
+    h2.title {
+        margin: 0.5vh 0.25vw 0 0.25vw;
+    }
+    h2#title {
+        width: calc( 50% - 0.5vw );
+        background-color: transparent;
+        float: left;
+        margin: 0;
+    }
+    #\0031\0030 {
+        margin: 1vh 2vw 1vh 0;
+        width: 10%;
+    }
+    #\0032\0030 {
+        margin: 1vh 2vw 1vh 0;
+        width: 10%;
+    }
+    #\0033\0030 {
+        margin: 1vh 2vw 1vh 0;
+        width: 10%;
+    }
+    #\0034\0030 {
+        margin: 1vh 2vw 1vh 0;
+        width: 10%;
+    }
+    /* 手牌、和了牌 */
+    .column_tehai {
+        height: 12vh;
+        width: 92.5vw;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.25);
+        margin: 0.5vh 0.25vw 0 0.25vw;
+    }
+    .column_horahai {
+        height: 12vh;
+        width: 7.5vw;
+    }
+    .column_horahai > *{
+        font-size: 2vw;
+    }    
+    /* 手牌、和了牌の牌スタイル */
+    .tehai {
+        display: flex;
+        justify-content: center;
+        height: 20vh;
+        width: 100vw;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%; 
+        align-items: center;
+        position: relative;
+    }
+    .tehai > *{
+        height: auto;
+        width: auto;
+        max-height: 20vh;
+        max-width: 7vw;
+    }
+    .tehai > #agarihai {
+        margin-left: 10px;
+    }
+    .\0031\0030\0031 {
+        border: solid 2px red;
+    }
+    .\0031\0030\0032 {
+        border: solid 2px magenta;
+    }
+    .\0031\0030\0033 {
+        border: solid 2px hotpink;
+    }
+    .\0031\0030\0034 {
+        border: solid 2px lightpink;
+    }
+    .\0032\0030\0031 {
+        border: solid 2px blue;
+    }
+    .\0032\0030\0032 {
+        border: solid 2px dodgerblue;
+    }
+    .\0032\0030\0033 {
+        border: solid 2px aqua;
+    }
+    .\0032\0030\0034 {
+        border: solid 2px powderblue;
+    }
+    .\0033\0030\0031 {
+        border: solid 2px darkorange;
+    }
+    .\0033\0030\0032 {
+        border: solid 2px gold;
+    }
+    .\0033\0030\0033 {
+        border: solid 2px yellow;
+    }
+    .\0033\0030\0034 {
+        border: solid 2px khaki;
+    }
+    .\0034\0030\0031 {
+        border: solid 2px darkgreen;
+    }
+    .\0034\0030\0032 {
+        border: solid 2px green;
+    }
+    .\0034\0030\0033 {
+        border: solid 2px chartreuse;
+    }
+    .\0034\0030\0034 {
+        border: solid 2px greenyellow;
+    }
+    /* ドラ、風牌、役 */
+    .wrapper {
+        display: flex;
+    }
+    .column_dora {
+        height: 55vh;
+        width: 44vw;
+    }
+    .column_kaze {
+        height: 55vh;
+        width: 16vw;
+    }
+    .column_yaku {
+        height: 55vh;
+        width: 40vw;
+    }
+    /* ドラ */
+    .dora1 {
+        margin-top: 1.5vh;
+        display: flex;
+        height: 20vh;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .dora1 > *{
+        width: auto;
+        height: auto;
+        max-width: 8.8vw;
+        max-height: 20vh;
+    }
+    .dora2 {
+        display: flex;
+        height: 20vh;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .dora2 > *{
+        width: auto;
+        height: auto;
+        max-width: 8.8vw;
+        max-height: 20vh;
+    }
+    /* 風牌 */
+    .column_title {
+        height: 21.5vh;
+        width: 6vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .column_title > * {
+        font-size: 6vh;
+    }
+    .column_title > .ba {
+        margin-top: 2vh;
+    }
+    .column_kazehai {
+        margin-left: 2vw;
+        display: flex;
+        justify-content: center;
+        height: 21.5vh;
+        width: 10vw;
+        align-items: center;
+    }
+    .column_kazehai > * {
+        height: auto;
+        width: auto;
+        max-height: 20vh;
+        max-width: 10vw;
+    }
+    .column_kazehai > #bakaze {
+        margin-top: 1vh;
+    }
+    /* 役 */
+    .yaku {
+        height: 43vh;
+        width: 36vw;
+    }
+    /* 役ボタンのスタイル */
+    .checkbox_box{
+        font-size: 0;
+    }
+    .checkbox-input{
+        display: none;
+    }
+    .checkbox-parts{
+        margin-top: 1vh;
+        margin-left: 1.6vw;
+        text-align: center;
+        position: relative;
+        padding: 2.7vh 0px 2.7vh 0px;
+        color: #000;
+        border-radius: 8px;
+        /* border: 1px solid #0000; */
+        display:inline-block;
+        line-height: 4vh;
+        width: 17vw;
+        height: 4vh;
+        font-size: 3.7vh;
+        background-color: white;
+
+    }
+    .checkbox-input:checked + .checkbox-parts{
+        background: #ff555e;
+        color: #fff;
+        /* border: 1px solid #ff555d00; */
+    }
+    /* ボタン */
+    button {
+        float: left;
+        height: 10vh;
+        width: 50vw;
+        font-size: 3.5vh;
+    }
+    /* モーダルウィンドウ */
+    #modal-content {
+        height: 90vh ;
+        width: 90vw ;
+        padding: 10px 20px ;
+        border: 2px solid #aaa ;
+        background: #fff ;
+        position: fixed ;
+        display: none ;
+        z-index: 2 ;
+        background-color: #1e9623;
+    }
+    #modal-content-rslt {
+        height: 90vh ;
+        width: 90vw ;
+        padding: 10px 20px ;
+        border: 2px solid #aaa ;
+        background: #fff ;
+        position: fixed ;
+        display: none ;
+        z-index: 2 ;
+        background-color: #1e9623;
+    }
+    #modal-content-naki {
+        height: 100vh ;
+        width: 100vw ;
+        position: fixed ;
+        display: none ;
+        z-index: 2 ;
+        background-color: #1e9623;
+    }
+    #modal-overlay {
+        z-index: 1 ;
+        display: none ;
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+        width: 100% ;
+        height: 120% ;
+        background-color: rgba( 0,0,0, 0.75 ) ;
+    }
+    /* 牌選択モーダルウィンドウ内の牌スタイル */
+    #syurui {
+        display: flex;
+        justify-content: space-around;
+        height: 20vh;
+        align-items: center;
+    }
+    #syurui :not(.manzu) {
+        margin-top: 0.5vh;
+    }
+    #syurui > * {
+        height: auto;
+        width: auto;
+        max-height: 20vh;
+        max-width: 7vw;
+    }
+    .close-chng {
+        margin-top: 1vh;
+        height: 10vh;
+        width: 90vw;
+    }
+    /* 計算結果モーダルウィンドウ内のスタイル */
+    .hourakei {
+        display: flex;
+        justify-content: space-evenly;
+        height: 18vh;
+        width: 90vw;
+        margin-top: 0.7%;
+        margin-bottom: 0.7%; 
+        align-items: center;
+    }
+    .hourakei > *{
+        height: auto;
+        width: auto;
+        max-height: 18vh;
+        max-width: 6.4vw;
+    }
+    .column_modal {
+        height: 48vh;
+        width: 45vw;
+    }
+    .wrapper_yaku {
+        height: 36vh;
+        width: 45vw;
+        overflow: scroll;
+        display: flex;
+    }
+    .column_m_yaku {
+        height: 36vh;
+        width: 32.5vw;
+        margin-left: 2.5vw;
+    }
+    .column_m_yaku > * {
+        border-radius: 8px 0 0 8px;
+        background-color: white;
+        color: black;
+        margin-top: 0.5vh;
+        padding-left: 3vw;
+    }
+    .column_m_han {
+        height: 36vh;
+        width: 12.5vw;
+        margin-right: 2.5vw; 
+    }
+    .column_m_han > * {
+        border-radius: 0 8px 8px 0;
+        text-align: right;
+        background-color: white;
+        color: black;
+        margin-top: 0.5vh;
+        padding-right: 2vw;
+    }
+    .modal_ten {
+        height: 23vh;
+        width: 45vw;
+        position: relative;
+    }
+    .modal_ten > #han {
+        padding-top: 1vh;
+        font-size: 7vh;
+    }
+    .modal_ten > #ten {
+        width: 45vw;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: 7.5vh;
+    }
+    .modal_mangan {
+        height: 12vh;
+        width: 44vw;
+        border-radius: 8px;
+        border: 2px solid red;
+        background-color: white;
+    }
+    .modal_mangan > * {
+        text-align: center;
+        font-weight: bold;
+        font-size: 10vh;
+        line-height: 12vh;
+        color: red;
+    }
+    .close-rslt {
+        float: left;
+        margin-top: 1vh;
+        height: 10vh;
+        width: 45vw;
+    }
+    /* 鳴きモーダルウィンドウのスタイル */
+    .close-naki {
+        width: 98vw;
+        margin: 0 1vw 0 1vw;
+    }
+    .tehai_naki {
+        display: flex;
+        justify-content: space-evenly;
+        height: 20vh;
+        width: 100vw;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%; 
+        align-items: center;
+    }
+    .tehai_naki > *{
+        height: auto;
+        width: auto;
+        max-height: 20vh;
+        max-width: 7vw;
+    }
+    .agari {
+        background-color: #000;
+        border-radius: 10%;
+        opacity: 0.5;
+    }
+
+    body {
+        background-color: #1e9623;
+        color: white;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    /* 画面が縦向きのスタイル */
+    * {
+        margin: 0%; padding: 0%;
+    }
+    /* 縦画面用のテキスト以外を非表示にする */
+    * :not(body):not(#muki) {
+        display: none;
+    }
+    /* メイン */
+    body {
+        background-color: black;
+    }
+
+    .error {
+        color: white;
+        text-align: center;
+        line-height: 100vh;
+        font-size: 3.5vh;
+    }
+}

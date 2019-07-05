@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <!-- ビューポートの設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- スタイルシートの読み込み -->
+    <link rel="stylesheet" href="style_cmr.css">
+
+    <!-- JavaScriptの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="modal_cmr.js"></script>
+    <script src="api.js"></script>
+
+    <title>麻雀カメラ</title>
+</head>
+
+<body>
+    <!-- 縦画面時に表示 -->
+    <h1 class="error">画面を横に傾けてください</h1>
+
+    <!-- 横画面時に表示 -->
+    <div class="camera">
+        <video id="video" autoplay playsinline="true" >video stream not available</video>
+        <img id="Line_pile_up"src="images/canvas.png" onclick="modal_open()">
+    </div>
+
+    <div id="modal-content">
+        <div id="img">
+            <canvas id="canvas">
+            </canvas>
+        </div>
+        <div id="btn">
+            <button type="button" id="modal-close">
+                撮りなおす
+            </button>
+            <button type="button" onclick="camera_send()">
+                送信する
+            </button>
+        </div>
+    </div>
+
+    <div class="loading">
+        <div class="animation">画像を送信しています。<br>しばらくお待ちください。</div>
+    </div>
+    <script>
+        document.querySelector('#video').addEventListener('click', function (e) {
+            video.pause();
+        }, false);
+    </script>
+</body>
+<script src="camera.js"> </script>
+
+</html>
