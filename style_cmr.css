@@ -17,6 +17,7 @@
 		z-index: 1;
 		display: flex;
 		position: absolute;
+		top: 0;
 		width: auto;
 	}
 	#img {
