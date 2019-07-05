@@ -18,7 +18,8 @@
 		display: flex;
 		position: absolute;
 		top: 0;
-		width: auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	#img {
 		height: 80vh;
