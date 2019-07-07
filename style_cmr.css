@@ -18,7 +18,7 @@
 		z-index: 1;
 		display: flex;
 		position: relative;
-		margin-top: -100vh;
+		margin-top: calc(-100vh + 7px);
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -28,7 +28,7 @@
 		z-index: 4;
 		display: flex;
 		position: relative;
-		margin-top: -80vh;
+		margin-top: calc(-80vh + 7px);
 		margin-left: auto;
 		margin-right: auto;
 	}
