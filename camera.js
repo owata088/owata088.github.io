@@ -15,6 +15,7 @@ let photo = null
 let startbutton = null
 let constrains = { video: {facingMode: 'environment'}, audio: false }
 let myStream = null;
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia
 /**
  * ユーザーのデバイスによるカメラ表示を開始し、
  * 各ボタンの挙動を設定する
